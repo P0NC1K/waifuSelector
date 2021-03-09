@@ -2,6 +2,7 @@ import React ,{Component} from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
+import ErrorBoundry from '../components/ErrorBoundry';
 import './App.css';
 
 
@@ -32,7 +33,7 @@ class App extends Component {
         });
         
         if(this.state.waifus.length === 0) {
-           return <h1> Loading iopt </h1>
+           return <h1 className='tc mt7'> Loading iopt </h1>
         }
         else {
             return (
@@ -40,7 +41,9 @@ class App extends Component {
                     <h1> Waifu List </h1>
                     <SearchBox searchProperty={this.onSearchProperty}/>
                     <Scroll>
-                    <CardList waifus={filterWaifus} />
+                        <ErrorBoundry>
+                            <CardList waifus={filterWaifus} />
+                        </ErrorBoundry>
                     </Scroll>
                 </div>
             )
