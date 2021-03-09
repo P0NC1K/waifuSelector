@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Funny & Cute Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Funny & Cute Regular'), url('Funny & Cute.woff') format('woff');
+    }
+
+    h1 {
+        font-family: 'Funny & Cute Regular';
+        opacity: 0.8;
+        font-size: 60px;
+    }
